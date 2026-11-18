@@ -1,5 +1,4 @@
 import React from 'react';
-import { HeroNetwork } from '@/components/home/HeroNetwork';
 
 export const BrandLogo: React.FC<{ className?: string }> = ({ className = '' }) => (
   <span className={`inline-flex items-center gap-[3px] ${className}`} aria-label="Germin">
@@ -28,27 +27,10 @@ interface Props {
 /** Shared full-screen status layout (404, errors) in the homepage hero style. */
 export const StatusScreen: React.FC<Props> = ({ code, title, body, actions, standalone, children }) => (
   <section
-    className={`relative isolate flex flex-col items-center justify-center overflow-hidden bg-[#F7F6F2] px-5 text-center ${
+    className={`relative isolate flex flex-col items-center justify-center overflow-hidden bg-[#FFFFFF] px-5 text-center ${
       standalone ? 'min-h-[100svh]' : 'min-h-[88svh] pt-24'
     }`}
   >
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 -z-20"
-      style={{
-        background:
-          'radial-gradient(ellipse 70% 55% at 50% 45%, #FFFFFF 0%, rgba(255,255,255,0) 70%),linear-gradient(180deg,#F7F6F2 0%,#FFFFFF 55%,#F7F6F2 100%)',
-      }}
-    />
-    <HeroNetwork className="pointer-events-none absolute inset-0 -z-10" />
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 -z-[5]"
-      style={{
-        background:
-          'radial-gradient(ellipse 42% 38% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 55%, rgba(255,255,255,0) 100%)',
-      }}
-    />
     {standalone && (
       <a href="/" className="absolute left-5 top-5 sm:left-8 sm:top-6" aria-label="Germin home">
         <BrandLogo />
